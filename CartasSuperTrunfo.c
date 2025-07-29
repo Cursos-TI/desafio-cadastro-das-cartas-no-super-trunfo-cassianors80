@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main() {
+int main(){
     // Declaração de variáveis para a carta 1
     char estado1;
     char codigo1[4];
@@ -9,6 +9,8 @@ int main() {
     float area1;
     float pib1;
     int pontosTuristicos1;
+    float densidadePopulacional1;
+    float pibPerCapita1;
 
     // Declaração de variáveis para a carta 2
     char estado2;
@@ -18,6 +20,8 @@ int main() {
     float area2;
     float pib2;
     int pontosTuristicos2;
+    float densidadePopulacional2;
+    float pibPerCapita2;
 
 
 
@@ -45,6 +49,11 @@ int main() {
     scanf("%d", &pontosTuristicos1);
 
 
+     //Cálculos para Carta 1
+    densidadePopulacional1 = populacao1 / area1;
+    pibPerCapita1 = (pib1 * 1000000000) / populacao1;
+
+
 
     // Instruções e entrada dos dados da carta 2
     printf("Cadastro da Carta 2:\n");
@@ -67,7 +76,12 @@ int main() {
     scanf("%f", &pib2);
 
     printf("Informe o número de pontos turísticos: ");
-    scanf("%d", &pontosTuristicos2);
+    scanf("%d", &pontosTuristicos2);     
+    
+
+      //Cálculos para Carta 2
+    densidadePopulacional2 = populacao2 / area2;
+    pibPerCapita2 = (pib2 * 1000000000) / populacao2;
 
 
 
@@ -77,33 +91,25 @@ int main() {
     printf("Código: %s\n", codigo1);
     printf("Nome da Cidade: %s\n", nomeCidade1);
     printf("População: %d\n", populacao1);
-    printf("Área: %.3f km²\n", area1);
-    printf("PIB: %.3f bilhões de reais\n", pib1);
+    printf("Área: %.2f km²\n", area1);
+    printf("PIB: %.2f bilhões de reais\n", pib1);
     printf("Número de Pontos Turísticos: %d\n", pontosTuristicos1);
+    printf("Densidade Populacional: %.2f hab/km²\n", densidadePopulacional1);
+    printf("Pib per Capita: %.2f reais\n", pibPerCapita1);
 
-    
 
-    // Exibição das informações da carta 1
+
+    // Exibição das informações da carta 2
     printf("\nCarta 2:\n");
     printf("Estado: %c\n", estado2);
     printf("Código: %s\n", codigo2);
     printf("Nome da Cidade: %s\n", nomeCidade2);
     printf("População: %d\n", populacao2);
-    printf("Área: %.3f km²\n", area2);
-    printf("PIB: %.3f bilhões de reais\n", pib2);
+    printf("Área: %.2f km²\n", area2);
+    printf("PIB: %.2f bilhões de reais\n", pib2);
     printf("Número de Pontos Turísticos: %d\n", pontosTuristicos2);
+    printf("Densidade Populacional: %.2f hab/km²\n", densidadePopulacional2);
+    printf("Pib per Capita: %.2f reais\n", pibPerCapita2);
+
 
     return 0;
-
-    /*
-    printf("%formato1 %formato2", variavel1, variavel2, variavel3, variavel 4, variavel5, variavel6, variavel 7)
-
-    %d: Imprime um inteiro no formato decimal.
-    %i: Equivalente a %d.
-    %f: Imprime um número de ponto flutuante no formato padrão.
-    %e: Imprime um número de ponto flutuante na notação científica.
-    %c: Imprime um único caractere.
-    %s: Imprime uma cadeia (string) de caracteres.
-    */
-
-}
